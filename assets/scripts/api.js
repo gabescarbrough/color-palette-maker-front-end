@@ -52,6 +52,16 @@ const getUserPalettes = function () {
   });
 };
 
+const getPalette = function () {
+  return $.ajax({
+    url: app.api + '/palettes/' + '4',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    method: 'GET',
+  });
+};
+
 const createPalette = function () {
   return $.ajax({
     url: app.api + '/palettes',
@@ -79,5 +89,6 @@ module.exports = {
   signOut,
   getPalettes,
   getUserPalettes,
+  getPalette,
   createPalette
 };
