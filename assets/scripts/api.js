@@ -98,6 +98,16 @@ const updatePalette = function() {
   });
 };
 
+const deletePalette = function() {
+  return $.ajax({
+    url: app.api + '/palettes/' + '4',
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
 module.exports = {
   signUp,
   signIn,
@@ -107,5 +117,6 @@ module.exports = {
   getUserPalettes,
   getPalette,
   createPalette,
-  updatePalette
+  updatePalette,
+  deletePalette
 };

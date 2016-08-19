@@ -91,6 +91,13 @@ const onUpdatePalette = function (event) {
   .fail(ui.failure);
 };
 
+const onDeletePalette = function (event) {
+  event.preventDefault();
+  api.deletePalette()
+  .done(ui.success)
+  .fail(ui.failure);
+};
+
 
 
 
@@ -107,6 +114,7 @@ const addHandlers = () => {
   $('#get-palette').on('click', onGetPalette);
   $('#create-palette').on('click', onCreatePalette);
   $('#update-palette').on('click', onUpdatePalette);
+  $('#delete-palette').on('click', onDeletePalette);
 };
 
 module.exports = {
