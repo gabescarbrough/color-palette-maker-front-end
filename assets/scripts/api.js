@@ -2,47 +2,48 @@
 
 const app = require('./app');
 
+// Authorization
 
 const signUp = (data) => $.ajax({
-    url: app.api + '/sign-up',
-    method: 'POST',
-    data,
-  });
+  url: app.api + '/sign-up',
+  method: 'POST',
+  data,
+});
 
 const signIn = (data) => $.ajax({
-    url: app.api + '/sign-in',
-    method: 'POST',
-    data,
-  });
+  url: app.api + '/sign-in',
+  method: 'POST',
+  data,
+});
 
 const changePassword = (data) => $.ajax({
-    url: app.api + '/change-password/' + app.user.id,
-    method: 'PATCH',
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    },
-    data,
-  });
+  url: app.api + '/change-password/' + app.user.id,
+  method: 'PATCH',
+  headers: {
+    Authorization: 'Token token=' + app.user.token,
+  },
+  data,
+});
 
 const signOut = () => $.ajax({
-    url: app.api + '/sign-out/' + app.user.id,
-    method: 'DELETE',
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    },
-  });
+  url: app.api + '/sign-out/' + app.user.id,
+  method: 'DELETE',
+  headers: {
+    Authorization: 'Token token=' + app.user.token,
+  },
+});
 
 
+// Palettes
 
-
-const getPalettes = function () {
+const getPalettes = function() {
   return $.ajax({
     url: app.api + '/palettes',
     method: 'GET',
   });
 };
 
-const getUserPalettes = function () {
+const getUserPalettes = function() {
   return $.ajax({
     url: app.api + '/palettes?user_palettes=true',
     method: 'GET',
@@ -52,7 +53,7 @@ const getUserPalettes = function () {
   });
 };
 
-const getPalette = function () {
+const getPalette = function() {
   return $.ajax({
     url: app.api + '/palettes/' + '4',
     headers: {
@@ -62,11 +63,11 @@ const getPalette = function () {
   });
 };
 
-const createPalette = function () {
+const createPalette = function() {
   return $.ajax({
     url: app.api + '/palettes',
     headers: {
-    Authorization: 'Token token=' + app.user.token,
+      Authorization: 'Token token=' + app.user.token,
     },
     method: 'POST',
     data: {
@@ -82,6 +83,21 @@ const createPalette = function () {
   });
 };
 
+const updatePalette = function() {
+  return $.ajax({
+      url: app.api + '/palettes/' + '4',
+      headers: {
+        Authorization: 'Token token=' + app.user.token,
+      },
+      method: 'PATCH',
+      data: {
+        "palette": {
+          "palette_name": "Patch???"
+        }
+      }
+  });
+};
+
 module.exports = {
   signUp,
   signIn,
@@ -90,5 +106,6 @@ module.exports = {
   getPalettes,
   getUserPalettes,
   getPalette,
-  createPalette
+  createPalette,
+  updatePalette
 };

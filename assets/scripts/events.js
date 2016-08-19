@@ -84,6 +84,13 @@ const onCreatePalette = function (event) {
   .fail(ui.failure);
 };
 
+const onUpdatePalette = function (event) {
+  event.preventDefault();
+  api.updatePalette()
+  .done(ui.success)
+  .fail(ui.failure);
+};
+
 
 
 
@@ -99,6 +106,7 @@ const addHandlers = () => {
   $('#get-user-palettes').on('click', onGetUserPalettes);
   $('#get-palette').on('click', onGetPalette);
   $('#create-palette').on('click', onCreatePalette);
+  $('#update-palette').on('click', onUpdatePalette);
 };
 
 module.exports = {
