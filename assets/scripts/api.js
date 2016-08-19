@@ -52,6 +52,25 @@ const getUserPalettes = function () {
   });
 };
 
+const createPalette = function () {
+  return $.ajax({
+    url: app.api + '/palettes',
+    headers: {
+    Authorization: 'Token token=' + app.user.token,
+    },
+    method: 'POST',
+    data: {
+      "palette": {
+        "palette_name": "new2",
+        "color1": "hsl(52, 50%, 50%)",
+        "color2": "hsl(60, 50%, 50%)",
+        "color3": "hsl(100, 50%, 50%)",
+        "color4": "hsl(200, 50%, 50%)",
+        "color5": "hsl(20, 50%, 50%)"
+      }
+    },
+  });
+};
 
 module.exports = {
   signUp,
@@ -59,5 +78,6 @@ module.exports = {
   changePassword,
   signOut,
   getPalettes,
-  getUserPalettes
+  getUserPalettes,
+  createPalette
 };

@@ -70,6 +70,13 @@ const onGetUserPalettes = function (event) {
   .fail(ui.failure);
 };
 
+const onCreatePalette = function (event) {
+  event.preventDefault();
+  api.createPalette()
+  .done(ui.success)
+  .fail(ui.failure);
+};
+
 
 
 
@@ -83,7 +90,7 @@ const addHandlers = () => {
   $('#sign-out-link').on('click', onSignOut);
   $('#get-palettes').on('click', onGetPalettes);
   $('#get-user-palettes').on('click', onGetUserPalettes);
-
+  $('#create-palette').on('click', onCreatePalette);
 };
 
 module.exports = {
