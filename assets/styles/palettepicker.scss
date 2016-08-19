@@ -1,0 +1,51 @@
+.palette-picker {
+  margin: 20px auto;
+  width: 1000px;
+}
+
+.color-card {
+  height: 200px;
+  width: 200px;
+}
+
+.color-picker {
+  float: left;
+}
+
+.sliders {
+  margin: 0 auto;
+  padding: 10px 0;
+  width: 150px;
+}
+
+.one {
+  background-color: hsl(60, 90%, 50%);
+}
+
+.two {
+  background-color: hsl(240, 50%, 30%);
+}
+
+.three {
+  background-color: hsl(45, 90%, 50%);
+}
+
+.four {
+  background-color: hsl(240, 100%, 15%);
+}
+
+.five {
+  background-color: hsl(140, 100%, 15%);
+}
+
+.color-range {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.range-label {
+  display: block;
+  margin: 10px 0;
+  text-align: center;
+}
