@@ -55,6 +55,17 @@ const showChangePasswordModal = function showPasswordModal(){
 
 
 
+
+const onGetPalettes = function (event) {
+  event.preventDefault();
+  api.getPalettes()
+  .done(ui.success)
+  .fail(ui.failure);
+};
+
+
+
+
 const addHandlers = () => {
   $('#sign-up-modal-link').on('click', showSignUpModal);
   $('#sign-in-modal-link').on('click', showSignInModal);
@@ -63,6 +74,7 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out-link').on('click', onSignOut);
+  $('#get-palettes').on('click', onGetPalettes);
 };
 
 module.exports = {

@@ -32,9 +32,22 @@ const signOut = () => $.ajax({
     },
   });
 
+
+
+
+const getPalettes = function () {
+  return $.ajax({
+    url: app.api + '/palettes',
+    method: 'GET',
+  });
+};
+
+
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
+  getPalettes
 };
