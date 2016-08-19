@@ -42,6 +42,15 @@ const getPalettes = function () {
   });
 };
 
+const getUserPalettes = function () {
+  return $.ajax({
+    url: app.api + '/palettes?user_palettes=true',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
 
 
 module.exports = {
@@ -49,5 +58,6 @@ module.exports = {
   signIn,
   changePassword,
   signOut,
-  getPalettes
+  getPalettes,
+  getUserPalettes
 };
