@@ -1,0 +1,30 @@
+{{#each palettes}}
+
+<div class="palette-card">
+  <div class="palette-thumbnail">
+    <p class="thumbnail-color" style="background-color: {{color1}};">
+      {{color1}}
+    </p>
+    <p class="thumbnail-color" style="background-color: {{color2}};">
+      {{color2}}
+    </p>
+    <p class="thumbnail-color" style="background-color: {{color3}};">
+      {{color3}}
+    </p>
+    <p class="thumbnail-color" style="background-color: {{color4}};">
+      {{color4}}
+    </p>
+    <p class="thumbnail-color" style="background-color: {{color5}};">
+      {{color5}}
+    </p>
+  </div>
+  <div class="palette-description">
+    <h4 class="palette-name">{{palette_name}}</h4>
+    <h5 class="created-by">Created by {{user.email}}</h5>
+    <a class="thumbnail-edit" href="#">Delete</a>
+    <a class="thumbnail-edit" href="#">Edit</a>
+</div>
+</div>
+
+
+{{/each}}

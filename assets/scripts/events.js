@@ -55,11 +55,20 @@ const showChangePasswordModal = function showPasswordModal(){
 
 
 
+let displayPalettes = function(data){
+  let paletteListingTemplate = require('./templates/palette.handlebars');
+    $('.content').html(paletteListingTemplate({
+      palettes: data.palettes
+    }));
+};
+
 
 const onGetPalettes = function (event) {
   event.preventDefault();
   api.getPalettes()
-  .done(ui.success)
+  .done(function(palettes){
+    displayPalettes(palettes);
+  })
   .fail(ui.failure);
 };
 
