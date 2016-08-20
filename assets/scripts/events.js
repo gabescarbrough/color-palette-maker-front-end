@@ -55,19 +55,14 @@ const showChangePasswordModal = function showPasswordModal(){
 
 
 
-let displayPalettes = function(data){
-  let paletteListingTemplate = require('./templates/palette.handlebars');
-    $('.content').html(paletteListingTemplate({
-      palettes: data.palettes
-    }));
-};
+
 
 
 const onGetPalettes = function (event) {
   event.preventDefault();
   api.getPalettes()
   .done(function(palettes){
-    displayPalettes(palettes);
+    ui.displayPalettes(palettes);
   })
   .fail(ui.failure);
 };
@@ -75,7 +70,9 @@ const onGetPalettes = function (event) {
 const onGetUserPalettes = function (event) {
   event.preventDefault();
   api.getUserPalettes()
-  .done(ui.success)
+  .done(function(palettes){
+    ui.displayUserPalettes(palettes);
+  })
   .fail(ui.failure);
 };
 
@@ -118,8 +115,8 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out-link').on('click', onSignOut);
-  $('#get-palettes').on('click', onGetPalettes);
-  $('#get-user-palettes').on('click', onGetUserPalettes);
+  $('#inspiration-link').on('click', onGetPalettes);
+  $('#my-palettes-link').on('click', onGetUserPalettes);
   $('#get-palette').on('click', onGetPalette);
   $('#create-palette').on('click', onCreatePalette);
   $('#update-palette').on('click', onUpdatePalette);

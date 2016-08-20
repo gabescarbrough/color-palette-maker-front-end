@@ -20,7 +20,19 @@ const signOutSuccess = () => {
   console.log(app);
 };
 
+let displayPalettes = function(data){
+  let paletteListingTemplate = require('./templates/palette.handlebars');
+    $('.content').html(paletteListingTemplate({
+      palettes: data.palettes
+    }));
+};
 
+let displayUserPalettes = function(data){
+  let paletteListingTemplate = require('./templates/user-palette.handlebars');
+    $('.content').html(paletteListingTemplate({
+      palettes: data.palettes
+    }));
+};
 
 
 module.exports = {
@@ -28,4 +40,6 @@ module.exports = {
   success,
   signInSuccess,
   signOutSuccess,
+  displayPalettes,
+  displayUserPalettes
 };
