@@ -1,7 +1,5 @@
-.palette-picker {
-  margin: 20px auto;
-  width: 1000px;
-  display: none;
+.color-picker {
+  float: left;
 }
 
 .color-card {
@@ -9,44 +7,16 @@
   width: 200px;
 }
 
-.color-picker {
-  float: left;
-}
-
-.sliders {
-  margin: 0 auto;
-  padding: 10px 0;
-  width: 150px;
-}
-
-.one {
-  background-color: hsl(60, 90%, 50%);
-}
-
-.two {
-  background-color: hsl(240, 50%, 30%);
-}
-
-.three {
-  background-color: hsl(45, 90%, 50%);
-}
-
-.four {
-  background-color: hsl(240, 100%, 15%);
-}
-
-.five {
-  background-color: hsl(140, 100%, 15%);
-}
-
-.color-range {
+.range {
   display: block;
   margin: 0 auto;
   padding: 0;
+  width: 150px !important; 
 }
 
 .range-label {
   display: block;
-  margin: 10px 0;
+  margin: 10px auto;
   text-align: center;
+  width: 200px;
 }
