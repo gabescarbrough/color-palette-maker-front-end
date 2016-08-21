@@ -7,6 +7,54 @@ const api = require('./api');
 const ui = require('./ui');
 const app = require('./app');
 
+
+// Variables
+
+const getRandomInt = function(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+};
+
+const randomHue = function() {
+  return getRandomInt(0, 360);
+};
+
+const randomPercent = function() {
+  return getRandomInt(0, 100);
+};
+
+let hueOne = randomHue();
+let saturationOne = randomPercent();
+let luminanceOne = randomPercent();
+
+let hueTwo = randomHue();
+let saturationTwo = randomPercent();
+let luminanceTwo = randomPercent();
+
+let hueThree = getRandomInt(0, 360);
+let saturationThree = randomPercent();
+let luminanceThree = randomPercent();
+
+let hueFour = getRandomInt(0, 360);
+let saturationFour = randomPercent();
+let luminanceFour = randomPercent();
+
+let hueFive = randomHue();
+let saturationFive = randomPercent();
+let luminanceFive = randomPercent();
+
+
+let hslOne = "hsl("+hueOne +", "+saturationOne +"%, "+luminanceOne +"%)";
+let hslTwo = "hsl("+hueTwo +", "+saturationTwo +"%, "+luminanceTwo +"%)";
+let hslThree = "hsl("+hueThree +", "+saturationThree +"%, "+luminanceThree +"%)";
+let hslFour = "hsl("+hueFour +", "+saturationFour +"%, "+luminanceFour +"%)";
+let hslFive = "hsl("+hueFive +", "+saturationFive +"%, "+luminanceFive +"%)";
+
+
+
+// Authentication
+
 const onSignUp = function (event) {
   let data = getFormFields(this);
   event.preventDefault();
@@ -55,7 +103,7 @@ const showChangePasswordModal = function showPasswordModal(){
 
 
 
-
+// AJAX
 
 
 const onGetPalettes = function (event) {
@@ -85,7 +133,7 @@ const onGetPalette = function (event) {
 
 const onCreatePalette = function (event) {
   event.preventDefault();
-  api.createPalette()
+  api.createPalette(hslOne, hslTwo, hslThree, hslFour, hslFive)
   .done(ui.success)
   .fail(ui.failure);
 };
@@ -107,6 +155,38 @@ const onDeletePalette = function (event) {
 
 
 
+
+// Palette Picker
+
+
+$(document).ready(function() {
+		$('.one').css({'background-color': hslOne});
+    $('.hue-one').val(hueOne);
+    $('.saturation-one').val(saturationOne);
+    $('.luminance-one').val(luminanceOne);
+
+    $('.two').css({'background-color': hslTwo});
+    $('.hue-two').val(hueTwo);
+    $('.saturation-two').val(saturationTwo);
+    $('.luminance-two').val(luminanceTwo);
+
+    $('.three').css({'background-color': hslThree});
+    $('.hue-three').val(hueThree);
+    $('.saturation-three').val(saturationThree);
+    $('.luminance-three').val(luminanceThree);
+
+    $('.four').css({'background-color': hslFour});
+    $('.hue-four').val(hueFour);
+    $('.saturation-four').val(saturationFour);
+    $('.luminance-four').val(luminanceFour);
+
+    $('.five').css({'background-color': hslFive});
+    $('.hue-five').val(hueFive);
+    $('.saturation-five').val(saturationFive);
+    $('.luminance-five').val(luminanceFive);
+});
+
+
 const addHandlers = () => {
   $('#sign-up-modal-link').on('click', showSignUpModal);
   $('#sign-in-modal-link').on('click', showSignInModal);
@@ -121,6 +201,109 @@ const addHandlers = () => {
   $('#create-palette').on('click', onCreatePalette);
   $('#update-palette').on('click', onUpdatePalette);
   $('#delete-palette').on('click', onDeletePalette);
+
+  // color-card one
+
+  $('.hue-one').on('input change', function() {
+  	  hueOne = $(this).val();
+  });
+
+  $('.saturation-one').on('input change', function() {
+      saturationOne = $(this).val();
+  });
+
+  $('.luminance-one').on('input change', function() {
+      luminanceOne = $(this).val();
+  });
+
+
+
+
+  // color-card two
+
+  $('.hue-two').on('input change', function() {
+  	  hueTwo = $(this).val();
+  });
+
+  $('.saturation-two').on('input change', function() {
+      saturationTwo = $(this).val();
+  });
+
+  $('.luminance-two').on('input change', function() {
+      luminanceTwo = $(this).val();
+  });
+
+
+
+  // color-card three
+
+  $('.hue-three').on('input change', function() {
+  	  hueThree = $(this).val();
+  });
+
+  $('.saturation-three').on('input change', function() {
+      saturationThree = $(this).val();
+  });
+
+  $('.luminance-three').on('input change', function() {
+      luminanceThree = $(this).val();
+  });
+
+
+
+  // color-card four
+
+  $('.hue-four').on('input change', function() {
+  	  hueFour = $(this).val();
+  });
+
+  $('.saturation-four').on('input change', function() {
+      saturationFour = $(this).val();
+  });
+
+  $('.luminance-four').on('input change', function() {
+      luminanceFour = $(this).val();
+  });
+
+
+
+
+
+  // color-card five
+
+  $('.hue-five').on('input change', function() {
+  	  hueFive = $(this).val();
+  });
+
+  $('.saturation-five').on('input change', function() {
+      saturationFive = $(this).val();
+  });
+
+  $('.luminance-five').on('input change', function() {
+      luminanceFive = $(this).val();
+  });
+
+
+  $(document).on('input change', function(){
+      hslOne = "hsl("+hueOne +", "+saturationOne +"%, "+luminanceOne +"%)";
+      hslTwo = "hsl("+hueTwo +", "+saturationTwo +"%, "+luminanceTwo +"%)";
+      hslThree = "hsl("+hueThree +", "+saturationThree +"%, "+luminanceThree +"%)";
+      hslFour = "hsl("+hueFour +", "+saturationFour +"%, "+luminanceFour +"%)";
+      hslFive = "hsl("+hueFive +", "+saturationFive +"%, "+luminanceFive +"%)";
+
+      $('.one').css({'background-color': hslOne});
+      $('.two').css({'background-color': hslTwo});
+      $('.three').css({'background-color': hslThree});
+      $('.four').css({'background-color': hslFour});
+      $('.five').css({'background-color': hslFive});
+
+      $('.hsl-one').html(hslOne);
+      $('.hsl-two').html(hslTwo);
+      $('.hsl-three').html(hslThree);
+      $('.hsl-four').html(hslFour);
+      $('.hsl-five').html(hslFive);
+  });
+
 };
 
 module.exports = {

@@ -63,7 +63,7 @@ const getPalette = function() {
   });
 };
 
-const createPalette = function() {
+const createPalette = function(hslOne, hslTwo, hslThree, hslFour, hslFive) {
   return $.ajax({
     url: app.api + '/palettes',
     headers: {
@@ -73,11 +73,11 @@ const createPalette = function() {
     data: {
       "palette": {
         "palette_name": "new2",
-        "color1": "hsl(52, 50%, 50%)",
-        "color2": "hsl(60, 50%, 50%)",
-        "color3": "hsl(100, 50%, 50%)",
-        "color4": "hsl(200, 50%, 50%)",
-        "color5": "hsl(20, 50%, 50%)"
+        "color1": hslOne,
+        "color2": hslTwo,
+        "color3": hslThree,
+        "color4": hslFour,
+        "color5": hslFive
       }
     },
   });
