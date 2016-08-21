@@ -98,9 +98,9 @@ const updatePalette = function() {
   });
 };
 
-const deletePalette = function() {
+const deletePalette = function(paletteIdDelete) {
   return $.ajax({
-    url: app.api + '/palettes/' + '4',
+    url: app.api + '/palettes/' + paletteIdDelete,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token,

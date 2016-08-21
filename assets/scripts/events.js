@@ -152,9 +152,11 @@ const onUpdatePalette = function (event) {
 };
 
 const onDeletePalette = function (event) {
+  let paletteIdDelete = $('#palette-id-delete').val();
+
   event.preventDefault();
-  api.deletePalette()
-  .done(ui.success)
+  api.deletePalette(paletteIdDelete)
+  .done(onGetUserPalettes(event))
   .fail(ui.failure);
 };
 
