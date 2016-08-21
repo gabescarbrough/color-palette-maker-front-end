@@ -118,6 +118,8 @@ const onGetPalettes = function (event) {
 };
 
 const onGetUserPalettes = function (event) {
+  $('.palette-picker').hide();
+  $('.content').show();
   event.preventDefault();
   api.getUserPalettes()
   .done(function(palettes){
