@@ -130,23 +130,6 @@
   <div class="center">
 
 
-  <!-- START TEST BUTTONS -->
-  <div>
-    <button class="btn btn-primary" id="get-palette">Get Palette</button>
-    <button class="btn btn-primary" id="update-palette">Update Palette</button>
-  </div>
-  <!-- END TEST BUTTONS -->
-
-<br>
-<br>
-
-<div>
-  <input type="text" placeholder="ID number" id="palette-id-delete">
-  <button class="btn btn-danger" id="delete-palette">Delete Palette by ID <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-</div>
-
-<br>
-<br>
 
 
   <!-- START COLOR PALETTE PICKER -->
@@ -232,7 +215,17 @@
       <h4><span class="hsl-five"></span></h4>
     </div>
 
+    <center>
+
+    <input type="text" placeholder="ID number" id="palette-id-delete">
+    <button class="btn btn-danger" id="delete-palette">Delete Palette by ID <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+
+    <input type="text" placeholder="ID number" id="palette-id-update">
+    <button class="btn btn-warning" id="update-palette">Overwrite Palette by ID</button>
+
     <button class="btn btn-success" id="create-palette">Save Palette</button>
+
+  </center>
 
   </div>
 

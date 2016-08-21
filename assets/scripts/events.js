@@ -145,8 +145,11 @@ const onCreatePalette = function (event) {
 };
 
 const onUpdatePalette = function (event) {
+  let paletteIdUpdate = $('#palette-id-update').val();
+  console.log(paletteIdUpdate);
+
   event.preventDefault();
-  api.updatePalette()
+  api.updatePalette(paletteIdUpdate, hslOne, hslTwo, hslThree, hslFour, hslFive)
   .done(ui.success)
   .fail(ui.failure);
 };
@@ -156,7 +159,7 @@ const onDeletePalette = function (event) {
 
   event.preventDefault();
   api.deletePalette(paletteIdDelete)
-  .done(onGetUserPalettes(event))
+  .done(ui.success)
   .fail(ui.failure);
 };
 
@@ -165,35 +168,6 @@ const onDeletePalette = function (event) {
 
 
 // Palette Picker
-
-
-$(document).ready(function() {
-		$('.one').css({'background-color': hslOne});
-    $('.hue-one').val(hueOne);
-    $('.saturation-one').val(saturationOne);
-    $('.luminance-one').val(luminanceOne);
-
-    $('.two').css({'background-color': hslTwo});
-    $('.hue-two').val(hueTwo);
-    $('.saturation-two').val(saturationTwo);
-    $('.luminance-two').val(luminanceTwo);
-
-    $('.three').css({'background-color': hslThree});
-    $('.hue-three').val(hueThree);
-    $('.saturation-three').val(saturationThree);
-    $('.luminance-three').val(luminanceThree);
-
-    $('.four').css({'background-color': hslFour});
-    $('.hue-four').val(hueFour);
-    $('.saturation-four').val(saturationFour);
-    $('.luminance-four').val(luminanceFour);
-
-    $('.five').css({'background-color': hslFive});
-    $('.hue-five').val(hueFive);
-    $('.saturation-five').val(saturationFive);
-    $('.luminance-five').val(luminanceFive);
-});
-
 
 const addHandlers = () => {
   $('#sign-up-modal-link').on('click', showSignUpModal);
@@ -296,6 +270,8 @@ const addHandlers = () => {
   });
 
 
+  // create hsl variables, apply background color on change, show values
+
   $(document).on('input change', function(){
       hslOne = "hsl("+hueOne +", "+saturationOne +"%, "+luminanceOne +"%)";
       hslTwo = "hsl("+hueTwo +", "+saturationTwo +"%, "+luminanceTwo +"%)";
@@ -314,7 +290,44 @@ const addHandlers = () => {
       $('.hsl-three').html(hslThree);
       $('.hsl-four').html(hslFour);
       $('.hsl-five').html(hslFive);
+
   });
+
+  // set background-color of cards
+
+  $('.one').css({'background-color': hslOne});
+  $('.hue-one').val(hueOne);
+  $('.saturation-one').val(saturationOne);
+  $('.luminance-one').val(luminanceOne);
+
+  $('.two').css({'background-color': hslTwo});
+  $('.hue-two').val(hueTwo);
+  $('.saturation-two').val(saturationTwo);
+  $('.luminance-two').val(luminanceTwo);
+
+  $('.three').css({'background-color': hslThree});
+  $('.hue-three').val(hueThree);
+  $('.saturation-three').val(saturationThree);
+  $('.luminance-three').val(luminanceThree);
+
+  $('.four').css({'background-color': hslFour});
+  $('.hue-four').val(hueFour);
+  $('.saturation-four').val(saturationFour);
+  $('.luminance-four').val(luminanceFour);
+
+  $('.five').css({'background-color': hslFive});
+  $('.hue-five').val(hueFive);
+  $('.saturation-five').val(saturationFive);
+  $('.luminance-five').val(luminanceFive);
+
+
+  // show initial hsl values
+
+  $('.hsl-one').html(hslOne);
+  $('.hsl-two').html(hslTwo);
+  $('.hsl-three').html(hslThree);
+  $('.hsl-four').html(hslFour);
+  $('.hsl-five').html(hslFive);
 
 };
 

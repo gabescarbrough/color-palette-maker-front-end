@@ -83,18 +83,22 @@ const createPalette = function(paletteName, hslOne, hslTwo, hslThree, hslFour, h
   });
 };
 
-const updatePalette = function() {
+const updatePalette = function(paletteIdPatch, hslOne, hslTwo, hslThree, hslFour, hslFive) {
   return $.ajax({
-      url: app.api + '/palettes/' + '4',
+      url: app.api + '/palettes/' + paletteIdPatch,
       headers: {
         Authorization: 'Token token=' + app.user.token,
       },
       method: 'PATCH',
       data: {
         "palette": {
-          "palette_name": "Patch???"
+          "color1": hslOne,
+          "color2": hslTwo,
+          "color3": hslThree,
+          "color4": hslFour,
+          "color5": hslFive
         }
-      }
+      },
   });
 };
 
