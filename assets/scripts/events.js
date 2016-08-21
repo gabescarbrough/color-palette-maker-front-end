@@ -107,6 +107,8 @@ const showChangePasswordModal = function showPasswordModal(){
 
 
 const onGetPalettes = function (event) {
+  $('.palette-picker').hide();
+  $('.content').show();
   event.preventDefault();
   api.getPalettes()
   .done(function(palettes){
@@ -197,6 +199,10 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out-link').on('click', onSignOut);
+  $('#palette-picker-link').on('click', function(){
+    $('.palette-picker').show();
+    $('.content').hide();
+  });
   $('#inspiration-link').on('click', onGetPalettes);
   $('#my-palettes-link').on('click', onGetUserPalettes);
   $('#get-palette').on('click', onGetPalette);
