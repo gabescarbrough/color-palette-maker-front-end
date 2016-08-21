@@ -132,8 +132,10 @@ const onGetPalette = function (event) {
 };
 
 const onCreatePalette = function (event) {
+  let paletteName = $('#palette-name').val();
+
   event.preventDefault();
-  api.createPalette(hslOne, hslTwo, hslThree, hslFour, hslFive)
+  api.createPalette(paletteName, hslOne, hslTwo, hslThree, hslFour, hslFive)
   .done(ui.success)
   .fail(ui.failure);
 };

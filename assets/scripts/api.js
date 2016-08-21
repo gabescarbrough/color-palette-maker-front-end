@@ -63,7 +63,7 @@ const getPalette = function() {
   });
 };
 
-const createPalette = function(hslOne, hslTwo, hslThree, hslFour, hslFive) {
+const createPalette = function(paletteName, hslOne, hslTwo, hslThree, hslFour, hslFive) {
   return $.ajax({
     url: app.api + '/palettes',
     headers: {
@@ -72,7 +72,7 @@ const createPalette = function(hslOne, hslTwo, hslThree, hslFour, hslFive) {
     method: 'POST',
     data: {
       "palette": {
-        "palette_name": "new2",
+        "palette_name": paletteName,
         "color1": hslOne,
         "color2": hslTwo,
         "color3": hslThree,
