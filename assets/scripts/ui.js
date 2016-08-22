@@ -43,6 +43,7 @@ const signOutSuccess = () => {
   $('#sign-up-modal-link').show();
   $('#sign-in-modal-link').show();
   $('.palette-picker').show();
+  $('#palette-picker-buttons').hide();
   $('.content').hide();
 };
 
