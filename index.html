@@ -132,110 +132,110 @@
 
 
 
-  <!-- START COLOR PALETTE PICKER -->
+    <!-- START COLOR PALETTE PICKER -->
 
-  <div class="palette-picker">
+    <div class="palette-picker">
 
-    <div>
-    <!-- <form id="palette-name">
+      <div>
+        <!-- <form id="palette-name">
       <fieldset> -->
         <input type="text" name="Palette Name" value="Palette Name" id="palette-name">
-      <!-- </fieldset>
+        <!-- </fieldset>
     </form> -->
+      </div>
+
+      <div class="color-picker">
+        <div class="color-card one"></div>
+        <label class="range-label">Hue
+          <input class="range hue-one" type="range" min="0" max="360" value="180">
+        </label>
+        <label class="range-label">Saturation
+          <input class="range saturation-one" type="range" min="0" max="100" value="50">
+        </label>
+        <label class="range-label">Luminance
+          <input class="range luminance-one" type="range" min="0" max="100" value="50">
+        </label>
+        <h4><span class="hsl-one"></span></h4>
+      </div>
+
+
+      <div class="color-picker">
+        <div class="color-card two"></div>
+        <label class="range-label">Hue
+          <input class="range hue-two" type="range" min="0" max="360" value="180">
+        </label>
+        <label class="range-label">Saturation
+          <input class="range saturation-two" type="range" min="0" max="100" value="50">
+        </label>
+        <label class="range-label">Luminance
+          <input class="range luminance-two" type="range" min="0" max="100" value="50">
+        </label>
+        <h4><span class="hsl-two"></span></h4>
+      </div>
+
+      <div class="color-picker">
+        <div class="color-card three"></div>
+        <label class="range-label">Hue
+          <input class="range hue-three" type="range" min="0" max="360" value="180">
+        </label>
+        <label class="range-label">Saturation
+          <input class="range saturation-three" type="range" min="0" max="100" value="50">
+        </label>
+        <label class="range-label">Luminance
+          <input class="range luminance-three" type="range" min="0" max="100" value="50">
+        </label>
+        <h4><span class="hsl-three"></span></h4>
+      </div>
+
+      <div class="color-picker">
+        <div class="color-card four"></div>
+        <label class="range-label">Hue
+          <input class="range hue-four" type="range" min="0" max="360" value="180">
+        </label>
+        <label class="range-label">Saturation
+          <input class="range saturation-four" type="range" min="0" max="100" value="50">
+        </label>
+        <label class="range-label">Luminance
+          <input class="range luminance-four" type="range" min="0" max="100" value="50">
+        </label>
+        <h4><span class="hsl-four"></span></h4>
+      </div>
+
+      <div class="color-picker">
+        <div class="color-card five"></div>
+        <label class="range-label">Hue
+          <input class="range hue-five" type="range" min="0" max="360" value="180">
+        </label>
+        <label class="range-label">Saturation
+          <input class="range saturation-five" type="range" min="0" max="100" value="50">
+        </label>
+        <label class="range-label">Luminance
+          <input class="range luminance-five" type="range" min="0" max="100" value="50">
+        </label>
+        <h4><span class="hsl-five"></span></h4>
+      </div>
+
+      <center><div id="palette-picker-buttons">
+
+        <input type="text" placeholder="ID number" id="palette-id-delete">
+        <button class="btn btn-danger" id="delete-palette">Delete Palette by ID <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+
+        <input type="text" placeholder="ID number" id="palette-id-update">
+        <button class="btn btn-warning" id="update-palette">Overwrite Palette by ID</button>
+
+        <button class="btn btn-success" id="create-palette">Save Palette</button>
+
+      </div></center>
+
     </div>
 
-    <div class="color-picker">
-      <div class="color-card one"></div>
-      <label class="range-label">Hue
-        <input class="range hue-one" type="range" min="0" max="360" value="180">
-      </label>
-      <label class="range-label">Saturation
-        <input class="range saturation-one" type="range" min="0" max="100" value="50">
-      </label>
-      <label class="range-label">Luminance
-        <input class="range luminance-one" type="range" min="0" max="100" value="50">
-      </label>
-      <h4><span class="hsl-one"></span></h4>
-    </div>
 
 
-    <div class="color-picker">
-      <div class="color-card two"></div>
-      <label class="range-label">Hue
-        <input class="range hue-two" type="range" min="0" max="360" value="180">
-      </label>
-      <label class="range-label">Saturation
-        <input class="range saturation-two" type="range" min="0" max="100" value="50">
-      </label>
-      <label class="range-label">Luminance
-        <input class="range luminance-two" type="range" min="0" max="100" value="50">
-      </label>
-      <h4><span class="hsl-two"></span></h4>
-    </div>
-
-    <div class="color-picker">
-      <div class="color-card three"></div>
-      <label class="range-label">Hue
-        <input class="range hue-three" type="range" min="0" max="360" value="180">
-      </label>
-      <label class="range-label">Saturation
-        <input class="range saturation-three" type="range" min="0" max="100" value="50">
-      </label>
-      <label class="range-label">Luminance
-        <input class="range luminance-three" type="range" min="0" max="100" value="50">
-      </label>
-      <h4><span class="hsl-three"></span></h4>
-    </div>
-
-    <div class="color-picker">
-      <div class="color-card four"></div>
-      <label class="range-label">Hue
-        <input class="range hue-four" type="range" min="0" max="360" value="180">
-      </label>
-      <label class="range-label">Saturation
-        <input class="range saturation-four" type="range" min="0" max="100" value="50">
-      </label>
-      <label class="range-label">Luminance
-        <input class="range luminance-four" type="range" min="0" max="100" value="50">
-      </label>
-      <h4><span class="hsl-four"></span></h4>
-    </div>
-
-    <div class="color-picker">
-      <div class="color-card five"></div>
-      <label class="range-label">Hue
-        <input class="range hue-five" type="range" min="0" max="360" value="180">
-      </label>
-      <label class="range-label">Saturation
-        <input class="range saturation-five" type="range" min="0" max="100" value="50">
-      </label>
-      <label class="range-label">Luminance
-        <input class="range luminance-five" type="range" min="0" max="100" value="50">
-      </label>
-      <h4><span class="hsl-five"></span></h4>
-    </div>
-
-    <center>
-
-    <input type="text" placeholder="ID number" id="palette-id-delete">
-    <button class="btn btn-danger" id="delete-palette">Delete Palette by ID <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-
-    <input type="text" placeholder="ID number" id="palette-id-update">
-    <button class="btn btn-warning" id="update-palette">Overwrite Palette by ID</button>
-
-    <button class="btn btn-success" id="create-palette">Save Palette</button>
-
-  </center>
-
-  </div>
+    <!-- END COLOR PALETTE PICKER -->
 
 
 
-  <!-- END COLOR PALETTE PICKER -->
-
-
-
-  <div class="content"></div>
+    <div class="content"></div>
 
   </div>
 

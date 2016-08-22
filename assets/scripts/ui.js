@@ -10,14 +10,40 @@ const failure = (error) => {
   console.error(error);
 };
 
+const signUpSuccess = (data) => {
+  app.user = data.user;
+  console.log(app);
+  $('#sign-up-modal-link').hide();
+  $('#sign-up-modal').modal('hide');
+};
+
+const changePasswordSuccess = (data) => {
+  console.log(data);
+  $('#change-password-modal').modal('hide');
+};
+
 const signInSuccess = (data) => {
   app.user = data.user;
   console.log(app);
+  $('#my-palettes-link').show();
+  $('#change-password-modal-link').show();
+  $('#sign-out-link').show();
+  $('#palette-picker-buttons').show();
+  $('#sign-up-modal-link').hide();
+  $('#sign-in-modal-link').hide();
+  $('#sign-in-modal').modal('hide');
 };
 
 const signOutSuccess = () => {
   delete app.user;
   console.log(app);
+  $('#my-palettes-link').hide();
+  $('#change-password-modal-link').hide();
+  $('#sign-out-link').hide();
+  $('#sign-up-modal-link').show();
+  $('#sign-in-modal-link').show();
+  $('.palette-picker').show();
+  $('.content').hide();
 };
 
 const displayPalettes = function(data){
@@ -38,6 +64,8 @@ const displayUserPalettes = function(data){
 module.exports = {
   failure,
   success,
+  changePasswordSuccess,
+  signUpSuccess,
   signInSuccess,
   signOutSuccess,
   displayPalettes,

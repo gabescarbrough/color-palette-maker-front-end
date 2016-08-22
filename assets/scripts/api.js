@@ -83,7 +83,7 @@ const createPalette = function(paletteName, hslOne, hslTwo, hslThree, hslFour, h
   });
 };
 
-const updatePalette = function(paletteIdPatch, hslOne, hslTwo, hslThree, hslFour, hslFive) {
+const updatePalette = function(paletteIdPatch, paletteName, hslOne, hslTwo, hslThree, hslFour, hslFive) {
   return $.ajax({
       url: app.api + '/palettes/' + paletteIdPatch,
       headers: {
@@ -92,6 +92,7 @@ const updatePalette = function(paletteIdPatch, hslOne, hslTwo, hslThree, hslFour
       method: 'PATCH',
       data: {
         "palette": {
+          "palette_name": paletteName,
           "color1": hslOne,
           "color2": hslTwo,
           "color3": hslThree,

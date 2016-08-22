@@ -59,7 +59,7 @@ const onSignUp = function (event) {
   let data = getFormFields(this);
   event.preventDefault();
   api.signUp(data)
-  .done(ui.success)
+  .done(ui.signUpSuccess)
   .fail(ui.failure);
 };
 
@@ -76,7 +76,7 @@ const onChangePassword = function onChangePassword(event) {
   let data = getFormFields(this);
   event.preventDefault();
   api.changePassword(data, app)
-  .done(ui.success)
+  .done(ui.changePasswordSuccess)
   .fail(ui.failure);
 };
 
@@ -146,10 +146,11 @@ const onCreatePalette = function (event) {
 
 const onUpdatePalette = function (event) {
   let paletteIdUpdate = $('#palette-id-update').val();
+  let paletteName = $('#palette-name').val();
   console.log(paletteIdUpdate);
 
   event.preventDefault();
-  api.updatePalette(paletteIdUpdate, hslOne, hslTwo, hslThree, hslFour, hslFive)
+  api.updatePalette(paletteIdUpdate, paletteName, hslOne, hslTwo, hslThree, hslFour, hslFive)
   .done(ui.success)
   .fail(ui.failure);
 };
